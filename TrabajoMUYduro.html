@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mañana sigo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .carrusel {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .carrusel img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .carrusel img.active {
+            display: block;
+        }
+
+        .cita {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .pie-de-pagina {
+            background: linear-gradient(45deg, #FFD700, #FF8C00, #FF6347, #FF1493, #800080, #4B0082, #1E90FF, #00CED1, #32CD32, #008000);
+            text-align: center;
+            padding: 10px 0;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        let currentSlide = 0;
+        
+        function showSlide(slideIndex) {
+            const slides = document.querySelectorAll('.carrusel img');
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[slideIndex].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide++;
+            if (currentSlide >= 2) {
+                currentSlide = 0;
+            }
+            showSlide(currentSlide);
+        }
+        
+        setInterval(nextSlide, 10000); // Cambia de slide cada 3 segundos
+    </script>
+</head>
+<body>
+    <div class="carrusel">
+        <img src="meme/s-189.gif" alt="Meme de Homero Simpson 1" class="active">
+        <img src="https://media.giphy.com/media/EatwJZRUIv41G/giphy.gif" alt="Meme de Homero Simpson 2">
+        <p class="cita">"Trabajo muy duro, como un esclavo... paguenme dinero"</p>
+    </div>
+    <div class="pie-de-pagina">
+        Mañana sigo trabajando Profe. Y Esteban tiene que venir a la UNC.
+    </div>
+</body>
+</html>
+
